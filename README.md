@@ -63,13 +63,16 @@ This project analyzes customer churn behavior by combining four related datasets
 ## Sample Output
 
 **Plan Type Breakdown**
-![Plan Type Bar Chart](PlanTypeBarchart.png)
+
+![Plan Type Bar Chart](Plan%20Type%20barchart.png)
 
 **Region Breakup**
-![Region Breakup Pie Chart](RegionBreakupPiechart.png)
+
+![Region Breakup Pie Chart](Region%20Breakup%20Piechart.png)
 
 **Transaction Scatter Plot**
-![Scatter Plot](ScatterPlot.png)
+
+![Scatter Plot](Scatter%20Plot.png)
 
 ## How to Run
 
@@ -95,9 +98,9 @@ customer-churn-analysis/
 ├── Subscriptions.csv                 # Subscription plan data
 ├── Transactions.csv                  # Transaction history data
 ├── Customer_Churn_Analysis.ipynb     # Main analysis notebook
-├── PlanTypeBarchart.png              # Annual vs Monthly plan breakdown
-├── RegionBreakupPiechart.png         # Regional distribution
-├── ScatterPlot.png                   # Transaction amount scatter plot
+├── Plan Type barchart.png            # Annual vs Monthly plan breakdown
+├── Region Breakup Piechart.png       # Regional distribution
+├── Scatter Plot.png                  # Transaction amount scatter plot
 ├── README.md
 └── LICENSE
 
@@ -118,7 +121,6 @@ M.Tech AI & Data Science | Aspiring Data Analyst / AI Engineer
 ---
 
 ⭐ If you found this project useful, consider giving it a star!
-
 
 
 
