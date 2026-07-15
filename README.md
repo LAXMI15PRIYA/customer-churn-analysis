@@ -1,69 +1,130 @@
-# Customer & Churn Analysis 📊
+# 📊 Customer & Churn Analysis
 
-Analyzed customer behavior, subscription trends, and churn patterns using Python, Pandas, Matplotlib, and Seaborn.
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458)
+![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-4c72b0)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
-## 🔍 What I Worked On
-- Data loading and preprocessing from multiple datasets (Customers, Churn, Subscriptions, Transactions)
-- Data filtering and segmentation (region-wise, active vs inactive customers)
-- Exploratory Data Analysis (EDA) using visualizations
-- Customer churn analysis and comparison
-- Subscription trend analysis (Annual vs Monthly)
-- Transaction analysis based on spending patterns
+Analyzed customer churn using pandas, numpy, and seaborn to uncover patterns in customer transactions and subscriptions across a 300-customer dataset spanning four related tables.
 
-## 📌 Key Insights
-- Total customers analyzed: **300**
-- Region breakdown: North America (103, 34.45%), Europe (100, 33.44%), Asia (96, 32.11%)
-- Active customers in Europe: **47**
-- Subscription split: Annual (200) vs Monthly (~199) — almost evenly distributed
-- 57.87% of transactions were above $100, 42.13% were $100 or below
-- Churned customers: **100** vs Retained customers: **200** (33% churn rate)
-- Active customers on Annual plans: **82** — a key high-value segment
+---
 
-## 🛠️ Tools & Skills Used
-Python | Pandas | NumPy | Matplotlib | Seaborn | Data Cleaning | EDA | Data Visualization
+## 📌 Table of Contents
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Dataset](#dataset)
+- [Approach](#approach)
+- [Key Insights](#key-insights)
+- [Sample Output](#sample-output)
+- [How to Run](#how-to-run)
+- [Project Structure](#project-structure)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
 
-## 📈 Steps Involved
+---
 
-**1. Data Loading**
-Imported libraries (Pandas, NumPy, Matplotlib, Seaborn) and loaded 4 datasets: Customers, Churn, Subscriptions, Transactions
+## Overview
 
-**2. Data Exploration**
-Viewed datasets using `.head()`, selected specific columns (FirstName, LastName), filtered customers by region
+This project analyzes customer churn behavior by combining four related datasets — Customers, Churn, Subscriptions, and Transactions — to understand who churns, how they spend, and where they're located. The goal is to move beyond a single churn percentage and understand the patterns behind it: subscription types, transaction habits, and regional distribution.
 
-**3. Customer Analysis**
-- Total customers: 300
-- Region-wise distribution visualized with a pie chart
-- Active vs inactive customer breakdown by region (e.g., 47 active customers in Europe)
+## Tech Stack
 
-**4. Subscription Analysis**
-- Filtered Annual plan users (200 total)
-- Compared Annual vs Monthly using bar charts — found an almost equal distribution (~200 each)
+| Category | Tools |
+|---|---|
+| Language | Python |
+| Data Handling | pandas, numpy |
+| Visualization | matplotlib, seaborn |
+| Environment | Google Colab / Jupyter Notebook |
 
-**5. Transaction Analysis**
-- Filtered transactions above $100 (125 transactions, 57.87%)
-- Created a new `Amount_Category` column (Above 100 / Below or Equal 100)
-- Built a pie chart, bar chart, and scatter plot to visualize spending patterns
+## Dataset
 
-**6. Churn Analysis**
-- Total churned customers: 100
-- Not churned: 200
-- Visualized churn vs retention using a bar chart (33% churn rate)
+| Detail | Value |
+|---|---|
+| Total customers | 300 |
+| Tables | Customers, Churn, Subscriptions, Transactions |
+| Key features | Plan Type, Region, Transaction Amount, Churn Status |
 
-**7. Data Merging**
-- Merged customers + subscriptions data
-- Found 82 active customers with an Annual plan — a valuable customer segment to target for retention
+## Approach
 
-## 📊 Charts Created
-- **Region Breakup** — Pie chart showing customer distribution across North America, Europe, and Asia
-- **Subscriptions: Annual vs Monthly** — Bar chart comparing plan types
-- **Transaction Amount Pie Chart** — Above $100 vs Below/Equal $100
-- **Transaction Bar Chart** — Count of transactions by amount category
-- **Scatter Plot** — Transaction amounts across all records, colored by category
-- **Churn vs Not-Churned** — Bar chart comparing churned vs retained customers
+1. **Data Integration** — merged Customers and Subscriptions on `CustomerID` to link plan type with customer status
+2. **Regional Analysis** — grouped customers by region to understand geographic distribution
+3. **Subscription Analysis** — compared Annual vs. Monthly plan counts, and isolated active customers on annual plans
+4. **Transaction Analysis** — categorized transactions as "Above $100" or "Below/Equal $100" and visualized the split
+5. **Churn Analysis** — calculated total churned vs. not-churned customers and compared the two groups
 
-## 📂 Files
-- `Customer_Churn_Analysis.ipynb` — main analysis notebook
-- `Customers.csv`, `Churn.csv`, `Subscriptions.csv`, `Transactions.csv` — datasets used
+## Key Insights
 
-## 💡 Takeaway
-This project strengthened my ability to extract meaningful insights from raw data and present them visually — skills I'm looking to apply to real-world business problems.
+- 📉 **33% churn rate** (100 out of 300 customers) — roughly one in three customers has churned, indicating a meaningful retention challenge worth investigating further
+- 💳 **57.87% of transactions are above $100**, showing that the majority of customer spending happens at higher transaction values rather than small purchases
+- ✅ **82 active customers on annual plans** — annual subscribers make up a substantial share of the active, engaged customer base
+- 🌍 **Near-even regional spread**: North America (34.45%), Europe (33.44%), and Asia (32.11%) — no single region dominates the customer base
+- 📊 Subscriptions are almost evenly split between Annual (200) and Monthly (199) plans
+
+## Sample Output
+
+**Plan Type Breakdown**
+![Plan Type Bar Chart](PlanTypeBarchart.png)
+
+**Region Breakup**
+![Region Breakup Pie Chart](RegionBreakupPiechart.png)
+
+**Transaction Scatter Plot**
+![Scatter Plot](ScatterPlot.png)
+
+## How to Run
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/LAXMI15PRIYA/customer-churn-analysis.git
+cd customer-churn-analysis
+
+# 2. Install dependencies
+pip install pandas numpy matplotlib seaborn
+
+# 3. Launch the notebook
+jupyter notebook Customer_Churn_Analysis.ipynb
+```
+
+Alternatively, open the notebook directly in Google Colab for zero local setup.
+
+## Project Structure
+
+customer-churn-analysis/
+├── Customers.csv                     # Customer demographic data
+├── Churn.csv                         # Churn status and reasons
+├── Subscriptions.csv                 # Subscription plan data
+├── Transactions.csv                  # Transaction history data
+├── Customer_Churn_Analysis.ipynb     # Main analysis notebook
+├── PlanTypeBarchart.png              # Annual vs Monthly plan breakdown
+├── RegionBreakupPiechart.png         # Regional distribution
+├── ScatterPlot.png                   # Transaction amount scatter plot
+├── README.md
+└── LICENSE
+
+## Future Improvements
+
+- [ ] Build a churn prediction model using classification algorithms
+- [ ] Analyze churn reasons (Poor Customer Service, High Prices, etc.) to identify the top drivers
+- [ ] Segment churned customers by plan type and region to find high-risk segments
+- [ ] Add a churn-vs-active comparison chart alongside the existing visuals
+- [ ] Add cohort analysis to track retention over time
+
+## Author
+
+**Lakshmi**
+M.Tech AI & Data Science | Aspiring Data Analyst / AI Engineer
+🔗 [GitHub](https://github.com/LAXMI15PRIYA)
+
+---
+
+⭐ If you found this project useful, consider giving it a star!
+
+
+
+
+
+
+
+
+
+
